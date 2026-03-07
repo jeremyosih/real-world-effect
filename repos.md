@@ -25,3 +25,7 @@ Answer Overflow turns Discord knowledge into indexed pages for Google, ChatGPT, 
 ### course-video-manager
 A tool for managing course video publishing workflows — editing metadata, generating descriptions, creating thumbnails, and posting to social platforms.
 [https://github.com/mattpocock/course-video-manager](https://github.com/mattpocock/course-video-manager)
+
+### r8y
+An Effect-oriented monorepo app with web and background services, Bun tooling, and MySQL-backed local development.
+[https://github.com/davis7dotsh/r8y](https://github.com/davis7dotsh/r8y)

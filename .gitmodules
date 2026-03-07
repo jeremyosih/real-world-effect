@@ -10,3 +10,7 @@
 	path = apps/course-video-manager
 	url = https://github.com/mattpocock/course-video-manager.git
 	branch = main
+[submodule "apps/r8y"]
+	path = apps/r8y
+	url = https://github.com/davis7dotsh/r8y.git
+	branch = main
