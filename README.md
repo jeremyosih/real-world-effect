@@ -2,7 +2,7 @@
 
 > Real World Effect applications and their open source codebases for developers to learn from
 
-This project brings real-world, open source Effect apps and services together in one repository. Having production codebases aggregated in a single place is valuable for learning on its own, but it becomes dramatically more useful when you can aim AI coding agents across the whole corpus.
+This project brings real-world, open source Effect apps (from 1 to 1m+ users) together in one repository. Having production codebases aggregated in a single place is valuable for learning on its own, but it becomes dramatically more useful when you can aim AI coding agents across the whole corpus.
 
 > [!IMPORTANT]
 > Huge shoutout to [Steve Clarke's Real World Rails](https://github.com/steveclarke/real-world-rails), which is itself an actively maintained continuation of [eliotsykes/real-world-rails](https://github.com/eliotsykes/real-world-rails). `real-world-effect` is a direct adaptation of that idea and scaffold for the Effect ecosystem.
