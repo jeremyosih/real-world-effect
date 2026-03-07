@@ -1,0 +1,82 @@
+name: Update submodules
+on:
+  schedule:
+    - cron: '17 8 * * 1' # Run weekly on Mondays at 8:17am UTC
+  workflow_dispatch: # Can be run manually from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permit git push
+      pull-requests: write
+    steps:
+      - name: Set TODAY env var
+        run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Check for configured submodules
+        id: submodules
+        run: |
+          if [ -f .gitmodules ] && git config --file .gitmodules --name-only --get-regexp '^submodule\..*\.path$' >/dev/null 2>&1; then
+            echo "has_submodules=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_submodules=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: No submodules configured
+        if: steps.submodules.outputs.has_submodules != 'true'
+        run: echo "No submodules configured; nothing to update."
+
+      - name: Create branch
+        if: steps.submodules.outputs.has_submodules == 'true'
+        run: git checkout -b submodules-update-$TODAY
+
+      - name: Run submodule updates
+        if: steps.submodules.outputs.has_submodules == 'true'
+        run: git submodule update --remote --checkout
+
+      - name: Check for changes
+        if: steps.submodules.outputs.has_submodules == 'true'
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: No changes to commit
+        if: steps.submodules.outputs.has_submodules == 'true' && steps.changes.outputs.has_changes != 'true'
+        run: echo "Submodules are already up to date."
+
+      - name: Configure git user
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name ${{ github.actor }}
+          git config user.email ${{ github.actor }}@users.noreply.github.com
+
+      - name: Commit
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git add .
+          git commit -m "Update submodules $TODAY"
+
+      - name: Push branch
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config push.autoSetupRemote true
+          git push
+
+      - name: Open pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr create \
+            --fill \
+            --base ${{ github.ref_name }}
