@@ -2,6 +2,6 @@
   "version": "1.0.0",
   "organization": "Jeremy Osih",
   "date": "March 2026",
-  "abstract": "Research how production Effect applications solve architectural problems by searching across real-world open source codebases. Ask how apps implement patterns like Layer composition, Schema usage, workflows, HTTP clients, authentication, observability, and more. Optionally run adversarial debate between approaches for your specific project.",
+  "abstract": "Set up the Real World Effect repository or research how production Effect applications solve architectural problems by searching across real-world open source codebases. Ask the agent to set up real-world-effect and initialize it, or ask how apps implement patterns like Layer composition, Schema usage, workflows, HTTP clients, authentication, observability, and more.",
   "references": []
 }

@@ -1,9 +1,9 @@
 ---
 name: real-world-effect
-description: Research how production Effect applications solve architectural problems using the Real World Effect repository. Use when the user wants to know how other apps handle something, find patterns, or compare approaches. Triggers on "effect patterns", "how do other effect apps", "real world effect", "research how apps do".
+description: Set up the Real World Effect repository or research how production Effect applications solve architectural problems using it. Use when the user wants to install/bootstrap real-world-effect, initialize the repo, or know how other apps handle something, find patterns, or compare approaches. Triggers on "set up real-world-effect", "install real-world-effect", "effect patterns", "how do other effect apps", "real world effect", "research how apps do".
 ---
 
-# Effect Pattern Research
+# Effect Setup And Research
 
 ## What This Is
 
@@ -11,6 +11,24 @@ The **Real World Effect** repository is a collection of real-world Effect
 application source code across multiple versions of the ecosystem. The `apps/`
 directory contains the full source of each app — packages, runtimes, layers,
 schemas, services, workflows, and supporting infrastructure.
+
+## Setup Mode
+
+If the user asks to set up or install `real-world-effect`, first look for the
+repo in the current working directory, then `~/Developer/real-world-effect`,
+then `~/src/real-world-effect`.
+
+If it is not present, ask the user where they want it cloned. If they do not
+care, suggest `~/Developer/real-world-effect` as the default.
+
+Once the target path is clear:
+
+- Clone `https://github.com/jeremyosih/real-world-effect.git`
+- Run `bin/setup`
+- Run `bin/status`
+
+After setup, tell the user where the repo was installed and whether any
+apps are currently configured.
 
 ## Locating the Repository
 

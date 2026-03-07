@@ -38,8 +38,28 @@ The `analyses/` directory is git-ignored — a safe place to store your own rese
 
 Some downstream repositories may use Git LFS. Install it if a repo you add requires it: https://git-lfs.com
 
+### Agent-led setup
+
+Install the skill:
+
 ```bash
-git clone <your-real-world-effect-repo>
+bunx skills add jeremyosih/real-world-effect
+# or
+npx skills add jeremyosih/real-world-effect
+```
+
+Then tell your agent:
+
+```text
+Set up real-world-effect and initialize it.
+```
+
+If the repo is not already present, the agent should ask where you want it cloned before proceeding.
+
+### Manual setup
+
+```bash
+git clone git@github.com:jeremyosih/real-world-effect.git
 cd real-world-effect/
 bin/setup
 ```
@@ -83,7 +103,7 @@ Apps should:
 
 ## Agent Skill
 
-This repo includes a `/real-world-effect` skill for AI coding agents. It teaches your agent to search across the collected codebases to research how production Effect apps solve architectural problems.
+This repo includes a `/real-world-effect` skill for AI coding agents. It can help clone and initialize the repository on request, then search across the collected codebases to research how production Effect apps solve architectural problems.
 
 Install it with:
 
@@ -93,7 +113,11 @@ bunx skills add jeremyosih/real-world-effect
 npx skills add jeremyosih/real-world-effect
 ```
 
-You can also use the local skill in `skills/real-world-effect/` directly with your agent tooling, then ask questions like "how do Effect apps structure layers?" or "research workflow patterns across real world effect apps".
+You can also use the local skill in `skills/real-world-effect/` directly with your agent tooling, then ask:
+
+- "Set up real-world-effect and initialize it."
+- "How do Effect apps structure layers?"
+- "Research workflow patterns across real world effect apps."
 
 ## Other Real World Codebase Collections
 
