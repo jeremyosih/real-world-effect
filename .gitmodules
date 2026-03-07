@@ -1,0 +1,4 @@
+[submodule "apps/t3code"]
+	path = apps/t3code
+	url = https://github.com/pingdotgg/t3code.git
+	branch = main

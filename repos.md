@@ -14,4 +14,6 @@ Short description of the application or service. [https://example.com](https://e
 
 ## Current Repos
 
-_No repos added yet._
+### t3code
+T3 Code is a minimal web GUI for coding agents. Currently Codex-first, with Claude Code support coming soon.
+[https://github.com/pingdotgg/t3code](https://github.com/pingdotgg/t3code)
