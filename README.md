@@ -85,7 +85,15 @@ Apps should:
 
 This repo includes a `/real-world-effect` skill for AI coding agents. It teaches your agent to search across the collected codebases to research how production Effect apps solve architectural problems.
 
-Use the local skill in `skills/real-world-effect/` with your agent tooling, then ask questions like "how do Effect apps structure layers?" or "research workflow patterns across real world effect apps".
+Install it with:
+
+```bash
+bunx skills add jeremyosih/real-world-effect
+# or
+npx skills add jeremyosih/real-world-effect
+```
+
+You can also use the local skill in `skills/real-world-effect/` directly with your agent tooling, then ask questions like "how do Effect apps structure layers?" or "research workflow patterns across real world effect apps".
 
 ## Other Real World Codebase Collections
 
