@@ -6,3 +6,7 @@
 	path = apps/AnswerOverflow
 	url = https://github.com/AnswerOverflow/AnswerOverflow.git
 	branch = main
+[submodule "apps/course-video-manager"]
+	path = apps/course-video-manager
+	url = https://github.com/mattpocock/course-video-manager.git
+	branch = main

@@ -21,3 +21,7 @@ T3 Code is a minimal web GUI for coding agents. Currently Codex-first, with Clau
 ### AnswerOverflow
 Answer Overflow turns Discord knowledge into indexed pages for Google, ChatGPT, and AI agents. Used by 1M+ users. [https://www.answeroverflow.com/](https://www.answeroverflow.com/)
 [https://github.com/AnswerOverflow/AnswerOverflow](https://github.com/AnswerOverflow/AnswerOverflow)
+
+### course-video-manager
+A tool for managing course video publishing workflows — editing metadata, generating descriptions, creating thumbnails, and posting to social platforms.
+[https://github.com/mattpocock/course-video-manager](https://github.com/mattpocock/course-video-manager)
