@@ -17,3 +17,7 @@ Short description of the application or service. [https://example.com](https://e
 ### t3code
 T3 Code is a minimal web GUI for coding agents. Currently Codex-first, with Claude Code support coming soon.
 [https://github.com/pingdotgg/t3code](https://github.com/pingdotgg/t3code)
+
+### AnswerOverflow
+Answer Overflow turns Discord knowledge into indexed pages for Google, ChatGPT, and AI agents. Used by 1M+ users. [https://www.answeroverflow.com/](https://www.answeroverflow.com/)
+[https://github.com/AnswerOverflow/AnswerOverflow](https://github.com/AnswerOverflow/AnswerOverflow)

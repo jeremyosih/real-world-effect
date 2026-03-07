@@ -2,3 +2,7 @@
 	path = apps/t3code
 	url = https://github.com/pingdotgg/t3code.git
 	branch = main
+[submodule "apps/AnswerOverflow"]
+	path = apps/AnswerOverflow
+	url = https://github.com/AnswerOverflow/AnswerOverflow.git
+	branch = main
