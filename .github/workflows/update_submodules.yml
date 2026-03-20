@@ -14,6 +14,9 @@ jobs:
       - name: Set TODAY env var
         run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
+      - name: Set update branch name
+        run: echo "UPDATE_BRANCH=submodules-update-$TODAY-${{ github.run_id }}" >> $GITHUB_ENV
+
       - name: Checkout project
         uses: actions/checkout@v4
         with:
@@ -34,7 +37,7 @@ jobs:
 
       - name: Create branch
         if: steps.submodules.outputs.has_submodules == 'true'
-        run: git checkout -b submodules-update-$TODAY
+        run: git checkout -b "$UPDATE_BRANCH"
 
       - name: Run submodule updates
         if: steps.submodules.outputs.has_submodules == 'true'
@@ -68,16 +71,14 @@ jobs:
 
       - name: Push branch
         if: steps.changes.outputs.has_changes == 'true'
-        run: |
-          git config push.autoSetupRemote true
-          git push
+        run: git push --set-upstream origin "$UPDATE_BRANCH"
 
       - name: Open pull request
         if: steps.changes.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BRANCH="submodules-update-$TODAY"
+          BRANCH="$UPDATE_BRANCH"
           BASE="${{ github.ref_name }}"
 
           # Avoid failing reruns when a PR already exists for this branch.
