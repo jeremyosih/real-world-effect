@@ -14,3 +14,7 @@
 	path = apps/r8y
 	url = https://github.com/davis7dotsh/r8y.git
 	branch = main
+[submodule "apps/better-context"]
+	path = apps/better-context
+	url = https://github.com/davis7dotsh/better-context.git
+	branch = main
