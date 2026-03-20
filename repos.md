@@ -29,3 +29,7 @@ A tool for managing course video publishing workflows — editing metadata, gene
 ### r8y
 An Effect-oriented monorepo app with web and background services, Bun tooling, and MySQL-backed local development.
 [https://github.com/davis7dotsh/r8y](https://github.com/davis7dotsh/r8y)
+
+### better-context
+btca is a source-grounded tool that lets AI agents answer questions by searching real code instead of stale docs. [https://btca.dev](https://btca.dev)
+[https://github.com/davis7dotsh/better-context](https://github.com/davis7dotsh/better-context)
