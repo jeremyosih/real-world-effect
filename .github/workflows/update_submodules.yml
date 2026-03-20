@@ -77,6 +77,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          BRANCH="submodules-update-$TODAY"
+          BASE="${{ github.ref_name }}"
+
+          # Avoid failing reruns when a PR already exists for this branch.
+          if [ "$(gh pr list --head "$BRANCH" --base "$BASE" --state open --json number --jq 'length')" -gt 0 ]; then
+            echo "PR already exists for $BRANCH -> $BASE; skipping creation."
+            exit 0
+          fi
+
           gh pr create \
-            --fill \
-            --base ${{ github.ref_name }}
+            --title "Update submodules $TODAY" \
+            --body "Automated submodule update for $TODAY." \
+            --base "$BASE" \
+            --head "$BRANCH"
