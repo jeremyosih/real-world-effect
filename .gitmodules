@@ -18,3 +18,7 @@
 	path = apps/better-context
 	url = https://github.com/davis7dotsh/better-context.git
 	branch = main
+[submodule "apps/expect"]
+	path = apps/expect
+	url = https://github.com/millionco/expect.git
+	branch = main

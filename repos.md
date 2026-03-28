@@ -33,3 +33,7 @@ An Effect-oriented monorepo app with web and background services, Bun tooling, a
 ### better-context
 btca is a source-grounded tool that lets AI agents answer questions by searching real code instead of stale docs. [https://btca.dev](https://btca.dev)
 [https://github.com/davis7dotsh/better-context](https://github.com/davis7dotsh/better-context)
+
+### expect
+Let agents test your code in a real browser. [https://expect.dev](https://expect.dev)
+[https://github.com/millionco/expect](https://github.com/millionco/expect)
