@@ -22,3 +22,7 @@
 	path = apps/expect
 	url = https://github.com/millionco/expect.git
 	branch = main
+[submodule "apps/executor"]
+	path = apps/executor
+	url = https://github.com/RhysSullivan/executor.git
+	branch = main

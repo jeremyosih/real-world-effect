@@ -37,3 +37,7 @@ btca is a source-grounded tool that lets AI agents answer questions by searching
 ### expect
 Let agents test your code in a real browser. [https://expect.dev](https://expect.dev)
 [https://github.com/millionco/expect](https://github.com/millionco/expect)
+
+### executor
+The missing integration layer for AI agents. Lets them call OpenAPI, MCP, GraphQL, and custom JS tools in a secure environment. [https://executor.sh](https://executor.sh)
+[https://github.com/RhysSullivan/executor](https://github.com/RhysSullivan/executor)
