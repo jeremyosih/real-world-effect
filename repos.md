@@ -1,8 +1,11 @@
 # Real World Effect
 
-Production Effect applications and services collected as git submodules for research and comparison.
+Production Effect applications and libraries collected as git submodules for research and comparison.
 
-Use this file as the human-readable catalog of the repos included in this workspace. When you add a new submodule with `bin/add`, add a matching entry here.
+Use this file as the human-readable catalog of the repos included in this workspace. When you add a new submodule with `bin/add` (or `bin/add --lib`), add a matching entry under the right section.
+
+- **Applications** (`apps/`) — products and services built with Effect
+- **Libraries** (`libs/`) — frameworks and packages built on Effect, useful for studying library design and public API patterns
 
 ## Entry Template
 
@@ -12,7 +15,7 @@ Short description of the application or service. [https://example.com](https://e
 [https://github.com/org/repo](https://github.com/org/repo)
 ```
 
-## Current Repos
+## Applications
 
 ### t3code
 T3 Code is a minimal web GUI for coding agents. Currently Codex-first, with Claude Code support coming soon.
@@ -41,3 +44,9 @@ Let agents test your code in a real browser. [https://expect.dev](https://expect
 ### executor
 The missing integration layer for AI agents. Lets them call OpenAPI, MCP, GraphQL, and custom JS tools in a secure environment. [https://executor.sh](https://executor.sh)
 [https://github.com/RhysSullivan/executor](https://github.com/RhysSullivan/executor)
+
+## Libraries
+
+### foldkit
+A frontend framework built on Effect that uses The Elm Architecture: one Model, a Message union, a pure update, and Commands that wrap Effects. [https://foldkit.dev](https://foldkit.dev)
+[https://github.com/foldkit/foldkit](https://github.com/foldkit/foldkit)

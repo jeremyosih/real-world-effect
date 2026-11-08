@@ -12,14 +12,16 @@ set -euo pipefail
 #
 # USAGE
 # -----
-#   bin/add <github-url>
+#   bin/add [--lib] <github-url>
 #
+#   --lib       Add as an Effect library (libs/) instead of an application (apps/)
 #   github-url  GitHub repo URL (e.g. https://github.com/user/repo)
 #
 # EXAMPLES
 # --------
 #   bin/add https://github.com/example/acme-app
 #   bin/add git@github.com:example/acme-api.git
+#   bin/add --lib https://github.com/example/acme-lib
 #
 ################################################################################
 
@@ -54,14 +56,23 @@ error() { echo -e "${red}Error:${nc} ${1}" >&2; exit 1; }
 ################################################################################
 
 parse_arguments() {
+  dir="apps"
+
+  if [ "${1:-}" = "--lib" ]; then
+    dir="libs"
+    shift
+  fi
+
   if [ -z "${1:-}" ]; then
-    echo "Usage: bin/add <github-url>"
+    echo "Usage: bin/add [--lib] <github-url>"
     echo ""
+    echo "  --lib       Add as an Effect library (libs/) instead of an application (apps/)"
     echo "  github-url  GitHub repo URL (e.g. https://github.com/user/repo)"
     echo ""
     echo "Examples:"
     echo "  bin/add https://github.com/example/acme-app"
     echo "  bin/add git@github.com:example/acme-api.git"
+    echo "  bin/add --lib https://github.com/example/acme-lib"
     exit 1
   fi
 
@@ -88,7 +99,7 @@ parse_repo_url() {
   esac
 
   name=$(basename "$repo_path")
-  dest="apps/$name"
+  dest="$dir/$name"
   clone_url="https://github.com/${repo_path}.git"
 }
 
@@ -116,7 +127,7 @@ add_submodule() {
 show_next_steps() {
   echo ""
   echo "Next steps:"
-  echo "  1. Add an entry to repos.md"
+  echo "  1. Add an entry to repos.md (Applications for apps/, Libraries for libs/)"
   echo "  2. Commit and push"
 }
 

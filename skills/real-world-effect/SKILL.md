@@ -1,6 +1,6 @@
 ---
 name: real-world-effect
-description: Set up the Real World Effect repository or research how production Effect applications solve architectural problems using it. Use when the user wants to install/bootstrap real-world-effect, initialize the repo, or know how other apps handle something, find patterns, or compare approaches. Triggers on "set up real-world-effect", "install real-world-effect", "effect patterns", "how do other effect apps", "real world effect", "research how apps do".
+description: Set up the Real World Effect repository or research how production Effect applications and libraries solve architectural problems using it. Use when the user wants to install/bootstrap real-world-effect, initialize the repo, or know how other apps handle something, find patterns, or compare approaches. Triggers on "set up real-world-effect", "install real-world-effect", "effect patterns", "how do other effect apps", "real world effect", "research how apps do".
 ---
 
 # Effect Setup And Research
@@ -8,9 +8,16 @@ description: Set up the Real World Effect repository or research how production 
 ## What This Is
 
 The **Real World Effect** repository is a collection of real-world Effect
-application source code across multiple versions of the ecosystem. The `apps/`
-directory contains the full source of each app — packages, runtimes, layers,
-schemas, services, workflows, and supporting infrastructure.
+source code across multiple versions of the ecosystem, split into two groups:
+
+- **Effect applications** (`apps/`) — the full source of each product or
+  service: packages, runtimes, layers, schemas, services, workflows, and
+  supporting infrastructure. Use these to learn how apps are assembled.
+- **Effect libraries** (`libs/`) — frameworks and packages built on Effect.
+  Use these to learn library design: public APIs, generic services and
+  layers, type-level patterns, packaging, and documentation.
+
+`repos.md` lists every repo under an Applications or Libraries heading.
 
 ## Setup Mode
 
@@ -27,19 +34,23 @@ Once the target path is clear:
 - Run `bin/setup`
 - Run `bin/status`
 
-After setup, tell the user where the repo was installed and whether any
-apps are currently configured.
+After setup, tell the user where the repo was installed and how many apps and
+libraries are configured.
 
 ## Locating the Repository
 
-Look for a directory called `real-world-effect` with an `apps/` subdirectory.
+Look for a directory called `real-world-effect` with `apps/` and `libs/`
+subdirectories.
 Check the current working directory first, then `~/Developer/real-world-effect`,
 then `~/src/real-world-effect`. If not found, ask the user where it lives.
 
 ## What To Do
 
-The user gives you a topic. Spin up parallel agents to search the apps for
-how real codebases implement that pattern. Read actual code — package
+The user gives you a topic. Decide whether it is an application concern (how
+to structure an app, wire runtimes, handle auth, deploy) or a library concern
+(how to design an Effect-native API, expose services, model errors for
+consumers) and search `apps/`, `libs/`, or both accordingly. Spin up parallel
+agents to search for how real codebases implement that pattern. Read actual code — package
 manifests, runtime setup, Layer composition, services, tags, Schema usage,
 HTTP clients, workflows, tests, deployment code — not just file names.
 Synthesize what you find into a clear analysis.

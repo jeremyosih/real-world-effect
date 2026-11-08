@@ -7,7 +7,7 @@ set -euo pipefail
 #
 # OVERVIEW
 # --------
-# Show how many apps are available and how many are initialized.
+# Show how many apps and libraries are available and how many are initialized.
 #
 # USAGE
 # -----

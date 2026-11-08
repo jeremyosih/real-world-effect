@@ -26,3 +26,7 @@
 	path = apps/executor
 	url = https://github.com/RhysSullivan/executor.git
 	branch = main
+[submodule "libs/foldkit"]
+	path = libs/foldkit
+	url = https://github.com/foldkit/foldkit.git
+	branch = main
