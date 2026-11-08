@@ -1,7 +1,7 @@
 name: Update submodules
 on:
   schedule:
-    - cron: '17 8 * * 1' # Run weekly on Mondays at 8:17am UTC
+    - cron: '0 23 * * 6' # Weekly, Saturday 23:00 UTC = Sunday 00:00 Europe/Zurich (CET; 01:00 during CEST)
   workflow_dispatch: # Can be run manually from GitHub UI
 
 jobs:
@@ -17,10 +17,11 @@ jobs:
       - name: Set update branch name
         run: echo "UPDATE_BRANCH=submodules-update-$TODAY-${{ github.run_id }}" >> $GITHUB_ENV
 
+      # Submodules are initialized below, non-recursively: some upstream repos
+      # (e.g. t3code) contain broken nested submodules that make
+      # actions/checkout's recursive credential setup fail.
       - name: Checkout project
-        uses: actions/checkout@v4
-        with:
-          submodules: true
+        uses: actions/checkout@v5
 
       - name: Check for configured submodules
         id: submodules
@@ -41,7 +42,9 @@ jobs:
 
       - name: Run submodule updates
         if: steps.submodules.outputs.has_submodules == 'true'
-        run: git submodule update --remote --checkout
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+        run: git submodule update --init --remote --checkout --jobs 8
 
       - name: Check for changes
         if: steps.submodules.outputs.has_submodules == 'true'
@@ -92,3 +95,9 @@ jobs:
             --body "Automated submodule update for $TODAY." \
             --base "$BASE" \
             --head "$BRANCH"
+
+      - name: Merge pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge "$UPDATE_BRANCH" --merge --delete-branch

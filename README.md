@@ -2,12 +2,12 @@
 
 > Real World Effect applications and their open source codebases for developers to learn from
 
-This project brings real-world, open source Effect apps (from 1 to 1m+ users) together in one repository. Having production codebases aggregated in a single place is valuable for learning on its own, but it becomes dramatically more useful when you can aim AI coding agents across the whole corpus.
+This project brings real-world, open source Effect apps (from 1 to 1m+ users) and libraries built on Effect together in one repository. Applications live in `apps/`, libraries in `libs/`. Having production codebases aggregated in a single place is valuable for learning on its own, but it becomes dramatically more useful when you can aim AI coding agents across the whole corpus.
 
 > [!IMPORTANT]
 > Huge shoutout to [Steve Clarke's Real World Rails](https://github.com/steveclarke/real-world-rails), which is itself an actively maintained continuation of [eliotsykes/real-world-rails](https://github.com/eliotsykes/real-world-rails). `real-world-effect` is a direct adaptation of that idea and scaffold for the Effect ecosystem.
 
-See [repos.md](repos.md) for the full list of included apps with descriptions.
+See [repos.md](repos.md) for the full list of included apps and libraries with descriptions.
 
 ## Why this matters now
 
@@ -66,7 +66,7 @@ bin/setup
 
 ## Staying up to date
 
-Submodules can be updated automatically via a GitHub Action that runs weekly and opens a PR. Once merged, you just need to pull:
+Submodules are updated automatically by a GitHub Action that runs every Sunday at midnight (Europe/Zurich), then opens and merges a PR. To get the latest, pull:
 
 ```bash
 git pull
@@ -80,7 +80,7 @@ If you want to update all configured submodules to the latest remote commits rig
 - **`bin/setup`** — Initialize and download all configured submodules
 - **`bin/update`** — Pull latest changes when an upstream exists and update all submodules to their latest remote commits
 - **`bin/status`** — Show how many apps are configured and initialized
-- **`bin/add`** — Add a new app by GitHub URL (e.g. `bin/add https://github.com/user/repo`)
+- **`bin/add`** — Add a new app by GitHub URL (e.g. `bin/add https://github.com/user/repo`), or a library with `--lib` (e.g. `bin/add --lib https://github.com/user/lib`)
 
 ## Contributing
 
@@ -89,17 +89,18 @@ Know of a great open source Effect app or service that should be in here? Open a
 If you already have the repo cloned, you can also add it directly:
 
 ```bash
-bin/add https://github.com/githubuser/foo
+bin/add https://github.com/githubuser/foo        # application -> apps/
+bin/add --lib https://github.com/githubuser/bar  # library -> libs/
 # then update repos.md, commit, and open a pull request
 ```
 
-#### Criteria for adding apps
+#### Criteria for adding apps and libraries
 
-Apps should:
+Apps and libraries should:
 - Be open source and publicly available on GitHub
 - Use Effect meaningfully, across any major version of the ecosystem
 - Be actively maintained or represent quality code worth studying
-- Be real-world applications or services (not just demos, templates, or tutorials)
+- Be real-world applications or services, or libraries/frameworks built on Effect (not just demos, templates, or tutorials)
 
 ## Agent Skill
 

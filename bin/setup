@@ -26,7 +26,7 @@ nc='\033[0m'
 
 main() {
   init_submodules
-  log "Setup complete! Explore the apps/ directory."
+  log "Setup complete! Explore the apps/ and libs/ directories."
   log "Run 'bin/update' anytime to pull the latest changes."
 }
 
