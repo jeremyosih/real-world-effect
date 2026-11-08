@@ -10,10 +10,6 @@
 	path = apps/course-video-manager
 	url = https://github.com/mattpocock/course-video-manager.git
 	branch = main
-[submodule "apps/r8y"]
-	path = apps/r8y
-	url = https://github.com/davis7dotsh/r8y.git
-	branch = main
 [submodule "apps/better-context"]
 	path = apps/better-context
 	url = https://github.com/davis7dotsh/better-context.git
@@ -24,9 +20,25 @@
 	branch = main
 [submodule "apps/executor"]
 	path = apps/executor
-	url = https://github.com/RhysSullivan/executor.git
+	url = https://github.com/UsefulSoftwareCo/executor.git
 	branch = main
 [submodule "libs/foldkit"]
 	path = libs/foldkit
 	url = https://github.com/foldkit/foldkit.git
+	branch = main
+[submodule "libs/alchemy"]
+	path = libs/alchemy
+	url = https://github.com/alchemy-run/alchemy.git
+	branch = main
+[submodule "libs/distilled"]
+	path = libs/distilled
+	url = https://github.com/alchemy-run/distilled.git
+	branch = main
+[submodule "libs/livestore"]
+	path = libs/livestore
+	url = https://github.com/livestorejs/livestore.git
+	branch = main
+[submodule "apps/rat-stack"]
+	path = apps/rat-stack
+	url = https://github.com/joelhooks/rat-stack.git
 	branch = main

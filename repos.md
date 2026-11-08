@@ -29,10 +29,6 @@ Answer Overflow turns Discord knowledge into indexed pages for Google, ChatGPT, 
 A tool for managing course video publishing workflows — editing metadata, generating descriptions, creating thumbnails, and posting to social platforms.
 [https://github.com/mattpocock/course-video-manager](https://github.com/mattpocock/course-video-manager)
 
-### r8y
-An Effect-oriented monorepo app with web and background services, Bun tooling, and MySQL-backed local development.
-[https://github.com/davis7dotsh/r8y](https://github.com/davis7dotsh/r8y)
-
 ### better-context
 btca is a source-grounded tool that lets AI agents answer questions by searching real code instead of stale docs. [https://btca.dev](https://btca.dev)
 [https://github.com/davis7dotsh/better-context](https://github.com/davis7dotsh/better-context)
@@ -43,10 +39,26 @@ Let agents test your code in a real browser. [https://expect.dev](https://expect
 
 ### executor
 The missing integration layer for AI agents. Lets them call OpenAPI, MCP, GraphQL, and custom JS tools in a secure environment. [https://executor.sh](https://executor.sh)
-[https://github.com/RhysSullivan/executor](https://github.com/RhysSullivan/executor)
+[https://github.com/UsefulSoftwareCo/executor](https://github.com/UsefulSoftwareCo/executor)
+
+### rat-stack
+An agentic TypeScript scaffold: Effect 4, XState 6 + @xstate/effect, Alchemy infra, and varlock config.
+[https://github.com/joelhooks/rat-stack](https://github.com/joelhooks/rat-stack)
 
 ## Libraries
 
 ### foldkit
 A frontend framework built on Effect that uses The Elm Architecture: one Model, a Message union, a pure update, and Commands that wrap Effects. [https://foldkit.dev](https://foldkit.dev)
 [https://github.com/foldkit/foldkit](https://github.com/foldkit/foldkit)
+
+### alchemy
+Infrastructure as Effects: define and deploy cloud resources as Effect programs. [https://alchemy.run](https://alchemy.run)
+[https://github.com/alchemy-run/alchemy](https://github.com/alchemy-run/alchemy)
+
+### distilled
+Effect-native SDKs for cloud providers. [https://distilled.cloud](https://distilled.cloud)
+[https://github.com/alchemy-run/distilled](https://github.com/alchemy-run/distilled)
+
+### livestore
+A state management framework based on reactive SQLite with a built-in sync engine. [https://livestore.dev](https://livestore.dev)
+[https://github.com/livestorejs/livestore](https://github.com/livestorejs/livestore)
