@@ -18,7 +18,7 @@ Short description of the application or service. [https://example.com](https://e
 ## Applications
 
 ### t3code
-T3 Code is a minimal web GUI for coding agents. Currently Codex-first, with Claude Code support coming soon.
+T3 Code is a GUI for coding agents. Works with Claude Code, Codex, Cursor, OpenCode, and any ACP agent, on desktop, web, and mobile.
 [https://github.com/pingdotgg/t3code](https://github.com/pingdotgg/t3code)
 
 ### AnswerOverflow
